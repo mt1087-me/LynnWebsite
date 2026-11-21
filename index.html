@@ -50,6 +50,8 @@ h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:44px
 .form input,.form textarea{font:inherit;font-size:16px;color:var(--text);background:transparent;border:1px solid var(--border);border-radius:8px;padding:12px 14px;resize:vertical}
 .form input:focus,.form textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
 .form .btn{justify-self:start;margin-top:4px}
+.err{color:#b3261e;font-size:14px;font-weight:500}
+.form .btn:disabled{opacity:.6;cursor:wait}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .sent{max-width:520px;margin:36px auto 0;padding:20px;border:1px solid var(--border);border-radius:8px;font-weight:600;color:var(--accent)}
 .ig{display:inline-flex;align-items:center;gap:8px;margin-top:44px;color:var(--muted);font-size:15px;font-weight:500;text-decoration:none}
@@ -100,15 +102,17 @@ footer{padding:32px 0;border-top:1px solid var(--border);color:var(--muted);font
 <div class="wrap">
 <h2>Get in touch</h2>
 <p class="lead">For commissions, purchases, or questions about the work.</p>
-<form class="form" id="form" action="https://formsubmit.co/mtodaro25@gmail.com" method="POST">
-<input type="hidden" name="_subject" value="New message from lynnfaiolaart.com">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="http://lynnfaiolaart.com/?sent=1#contact">
-<input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<form class="form" id="form" action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="1419fcfd-af77-44d8-ac33-c37e3fd233eb">
+<input type="hidden" name="subject" value="New message from lynnfaiolaart.com">
+<input type="hidden" name="from_name" value="Lynn Faiola Art website">
+<input type="hidden" name="redirect" value="http://lynnfaiolaart.com/?sent=1#contact">
+<input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <label>Name<input type="text" name="name" required autocomplete="name"></label>
 <label>Email<input type="email" name="email" required autocomplete="email"></label>
 <label>Message<textarea name="message" rows="5" required></textarea></label>
-<button type="submit" class="btn">Send message</button>
+<button type="submit" class="btn" id="sendbtn">Send message</button>
+<p class="err" id="err" hidden>Sorry, your message couldn't be sent. Please try again in a moment.</p>
 </form>
 <p class="sent" id="sent" hidden>Thank you! Your message has been sent, and Lynn will be in touch soon.</p>
 <a class="ig" href="https://www.instagram.com/lynnfaiolaart/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@lynnfaiolaart</a>
@@ -166,7 +170,12 @@ function hide(){lb.classList.remove('open');document.body.style.overflow=''}
 lb.querySelector('.x').onclick=hide;lb.querySelector('.prev').onclick=e=>{e.stopPropagation();show(cur-1)};lb.querySelector('.next').onclick=e=>{e.stopPropagation();show(cur+1)};
 lb.onclick=e=>{if(e.target===lb)hide()};
 addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')hide();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
-if(location.search.indexOf('sent=1')>-1){document.getElementById('form').hidden=true;document.getElementById('sent').hidden=false}
+const form=document.getElementById('form'),sent=document.getElementById('sent'),err=document.getElementById('err'),sb=document.getElementById('sendbtn');
+function done(){form.hidden=true;sent.hidden=false}
+if(location.search.indexOf('sent=1')>-1)done();
+form.addEventListener('submit',async e=>{e.preventDefault();err.hidden=true;sb.disabled=true;sb.textContent='Sending...';
+try{const r=await fetch(form.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(form)});const j=await r.json();if(j.success){done()}else{throw 0}}
+catch(x){err.hidden=false;sb.disabled=false;sb.textContent='Send message'}});
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body>
