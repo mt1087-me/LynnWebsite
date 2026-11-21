@@ -127,6 +127,8 @@ const art=[
 ["02",1099,1500,"Profile portrait in blue and violet with curling pink hair on a red ground"],
 ["03",1120,1500,"Red-branched tree and green pine against a pink and turquoise sky"],
 ["01",1166,1500,"Portrait of a woman with yellow and lavender hair against deep red"],
+["29",1245,1600,"Blue woman resting her head on her hand before a field of bright shapes on silver"],
+["26",1591,1600,"Sculpted elongated figure mounted on a wooden cross"],
 ["05",1193,1500,"Twisting trees beneath a swirling orange and blue sky"],
 ["22",1192,1600,"Glass mosaic of a flower with a dark glass center on a white and violet ground"],
 ["19",1270,1600,"Three tall pines against a turquoise sky above an orange hillside"],
@@ -137,6 +139,8 @@ const art=[
 ["07",872,1125,"Laughing woman in profile with green hair beneath an orange sun"],
 ["09",931,1125,"Full moon over a violet marsh at night with branches overhead"],
 ["24",1194,1600,"Woman with a blue hand at her lips, rust and gray patterned hair"],
+["27",1275,1600,"Copper-colored sculpted figure with a cigarette on a mosaic base"],
+["30",1240,1600,"Blue-haired woman in profile beneath a red crescent moon on violet"],
 ["20",1226,1600,"Red sun in a violet halo over a row of tangled trees"],
 ["12",1174,1500,"Blue portrait of a man with glasses and a red mustache on yellow"],
 ["14",1116,1125,"Pink flowers bursting from a blue glass vase on an orange table"],
@@ -145,12 +149,13 @@ const art=[
 ["23",1204,1600,"Colorful glass mosaic with swirling amber and burgundy leaf shapes"],
 ["21",1177,1600,"Abstract of black-ringed circles in orange, pink and turquoise swirls"],
 ["11",1124,1500,"Lavender figure with arms crossed against orange and pink waves"],
+["28",1600,1553,"White round panel with a black vertical stripe and clusters of pins"],
 ["18",1596,1610,"Red horned figure leaning on his arm with a cigarette"],
 ["25",1200,1600,"Three bare trees on a blue hill beneath dripping red blossoms"],
 ["08",924,2000,"Close-up of thick, textured brushwork in turquoise, green and cream"],
 ["15",1500,693,"Tall grasses in green, orange and pink beneath a white sun"]
 ];
-const cat={"22":"m","23":"m"};
+const cat={"22":"m","23":"m","26":"x","27":"x","28":"x"};
 const g=document.getElementById('g'),empty=document.getElementById('empty');let vis=art.map((a,i)=>i);
 art.forEach(([f,w,h,alt],i)=>{const b=document.createElement('button');b.dataset.c=cat[f]||'p';b.setAttribute('aria-label','View: '+alt);b.innerHTML='<img src="images/'+f+'.jpg" width="'+w+'" height="'+h+'" alt="'+alt+'" loading="'+(i<6?'eager':'lazy')+'" decoding="async">';b.onclick=()=>show(vis.indexOf(i));g.appendChild(b)});
 const fb=[...document.querySelectorAll('.filters button')];
