@@ -4,59 +4,51 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lynn Faiola Art</title>
-<meta name="description" content="Original artwork by Lynn Faiola.">
+<meta name="description" content="Paintings and mosaics by Lynn Faiola.">
+<meta property="og:title" content="Lynn Faiola Art">
+<meta property="og:description" content="Paintings and mosaics by Lynn Faiola.">
+<meta property="og:image" content="https://lynnfaiolaart.com/images/02.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#faf8f5;--surface:#fff;--text:#1f1b16;--muted:#6b6258;--border:#e8e2d9;--accent:#9a5b3c;--max:1100px}
-@media (prefers-color-scheme:dark){:root{--bg:#141210;--surface:#1d1a17;--text:#f3eee7;--muted:#a89e92;--border:#2c2824;--accent:#d49a76}}
+:root{--bg:#faf8f5;--text:#1f1b16;--muted:#6b6258;--border:#e8e2d9;--accent:#9a5b3c;--max:1280px}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--text:#f3eee7;--muted:#a89e92;--border:#2c2824;--accent:#d49a76}}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Inter,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.serif{font-family:"Cormorant Garamond",Georgia,serif}
 header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
 nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;text-decoration:none;letter-spacing:.01em}
+.logo{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;text-decoration:none}
 nav ul{display:flex;gap:28px;list-style:none}
 nav ul a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500}
 nav ul a:hover{color:var(--text)}
-.hero{padding:120px 0 100px;text-align:center}
+.hero{padding:96px 0 72px;text-align:center}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
-.hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(48px,8vw,88px);line-height:1.02;letter-spacing:-.01em;margin:18px auto 0;max-width:14ch}
-.hero p{font-size:19px;color:var(--muted);max-width:560px;margin:24px auto 0}
-.btns{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;justify-content:center}
-.btn{display:inline-block;padding:12px 24px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--border);transition:transform .15s}
-.btn:hover{transform:translateY(-1px)}
-.btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
-section{padding:88px 0;border-top:1px solid var(--border)}
-h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:44px;letter-spacing:-.01em;margin-bottom:10px}
-.lead{color:var(--muted);max-width:600px;margin-bottom:44px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
-.piece{margin:0}
-.piece .frame{aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:var(--surface);border:1px solid var(--border)}
-.piece img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.piece:hover img{transform:scale(1.03)}
-.ph{width:100%;height:100%}
-.p1{background:linear-gradient(160deg,#e8c9a8,#b9785a)}
-.p2{background:linear-gradient(160deg,#a9c2c9,#4f6f7d)}
-.p3{background:linear-gradient(160deg,#e6dcc3,#a89a6e)}
-.p4{background:linear-gradient(160deg,#d7b4b8,#8a5a6a)}
-.p5{background:linear-gradient(160deg,#b9c9a8,#5f7a52)}
-.p6{background:linear-gradient(160deg,#c9bfdc,#6b5f8f)}
-.piece figcaption{margin-top:14px}
-.piece h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:600}
-.piece span{font-size:14px;color:var(--muted)}
-.about{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:center}
-.portrait{aspect-ratio:4/5;border-radius:4px;background:linear-gradient(160deg,#e9dfd2,#c7b39c)}
-.portrait img{width:100%;height:100%;object-fit:cover;border-radius:4px}
-.about p{color:var(--muted);margin-bottom:16px}
-.contact{text-align:center}
-.contact .lead{margin:0 auto 8px}
+.hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(52px,9vw,96px);line-height:1;margin-top:16px}
+.hero p{font-size:19px;color:var(--muted);max-width:520px;margin:20px auto 0}
+section{padding:24px 0 96px}
+.gallery{columns:3 320px;column-gap:20px}
+.gallery button{display:block;width:100%;margin:0 0 20px;padding:0;border:0;background:none;cursor:zoom-in;break-inside:avoid;border-radius:3px;overflow:hidden}
+.gallery img{display:block;width:100%;height:auto;transition:transform .5s,opacity .3s}
+.gallery button:hover img{transform:scale(1.025)}
+.gallery button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.contact{border-top:1px solid var(--border);padding:88px 0;text-align:center}
+h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:44px;margin-bottom:10px}
+.lead{color:var(--muted);max-width:560px;margin:0 auto}
+.btn{display:inline-block;margin-top:28px;padding:12px 26px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;background:var(--text);color:var(--bg)}
 footer{padding:32px 0;border-top:1px solid var(--border);color:var(--muted);font-size:14px;text-align:center}
-@media (max-width:720px){nav ul{gap:18px}.hero{padding:80px 0 72px}.about{grid-template-columns:1fr;gap:32px}section{padding:64px 0}h2{font-size:36px}}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,8,6,.94);display:none;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:90vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb button{position:absolute;background:none;border:0;color:#fff;font-size:40px;line-height:1;cursor:pointer;padding:16px;opacity:.75}
+.lb button:hover{opacity:1}
+.lb .x{top:8px;right:12px}
+.lb .prev{left:8px;top:50%;transform:translateY(-50%)}
+.lb .next{right:8px;top:50%;transform:translateY(-50%)}
+@media (max-width:720px){.hero{padding:64px 0 48px}.gallery{column-gap:12px}.gallery button{margin-bottom:12px}.lb .prev,.lb .next{top:auto;bottom:12px;transform:none}}
 </style>
 </head>
 <body>
@@ -65,58 +57,73 @@ footer{padding:32px 0;border-top:1px solid var(--border);color:var(--muted);font
 <a href="#" class="logo">Lynn Faiola</a>
 <ul>
 <li><a href="#gallery">Gallery</a></li>
-<li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 </header>
 <main>
 <div class="hero wrap">
-<div class="eyebrow">Artist</div>
+<div class="eyebrow">Paintings &amp; Mosaics</div>
 <h1>Lynn Faiola</h1>
-<p>Original artwork. A short line about the work goes here: the mediums, the subjects, what it's about.</p>
-<div class="btns">
-<a class="btn primary" href="#gallery">View the gallery</a>
-<a class="btn" href="#contact">Get in touch</a>
-</div>
+<p>Portraits, landscapes and mosaics in bold, fearless color.</p>
 </div>
 <section id="gallery">
 <div class="wrap">
-<h2>Gallery</h2>
-<p class="lead">Selected works. Each placeholder below will be replaced with a photo of a real piece.</p>
-<div class="gallery">
-<!-- To add a real piece: replace <div class="ph p1"></div> with <img src="images/piece1.jpg" alt="Title of the piece"> -->
-<figure class="piece"><div class="frame"><div class="ph p1"></div></div><figcaption><h3>Untitled I</h3><span>Medium, size, year</span></figcaption></figure>
-<figure class="piece"><div class="frame"><div class="ph p2"></div></div><figcaption><h3>Untitled II</h3><span>Medium, size, year</span></figcaption></figure>
-<figure class="piece"><div class="frame"><div class="ph p3"></div></div><figcaption><h3>Untitled III</h3><span>Medium, size, year</span></figcaption></figure>
-<figure class="piece"><div class="frame"><div class="ph p4"></div></div><figcaption><h3>Untitled IV</h3><span>Medium, size, year</span></figcaption></figure>
-<figure class="piece"><div class="frame"><div class="ph p5"></div></div><figcaption><h3>Untitled V</h3><span>Medium, size, year</span></figcaption></figure>
-<figure class="piece"><div class="frame"><div class="ph p6"></div></div><figcaption><h3>Untitled VI</h3><span>Medium, size, year</span></figcaption></figure>
-</div>
-</div>
-</section>
-<section id="about">
-<div class="wrap about">
-<div class="portrait"></div>
-<div>
-<h2>About</h2>
-<p>A few sentences about Lynn go here: background, how she started making art, and what inspires the work.</p>
-<p>A second paragraph can cover exhibitions, commissions, or where the work can be seen in person.</p>
-</div>
+<div class="gallery" id="g"></div>
 </div>
 </section>
 <section id="contact" class="contact">
 <div class="wrap">
 <h2>Get in touch</h2>
 <p class="lead">For commissions, purchases, or questions about the work.</p>
-<div class="btns">
-<a class="btn primary" href="mailto:hello@lynnfaiolaart.com">Email</a>
-<a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-</div>
+<a class="btn" href="mailto:hello@lynnfaiolaart.com">Email Lynn</a>
 </div>
 </section>
 </main>
 <footer><div class="wrap">&copy; <span id="year"></span> Lynn Faiola</div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Artwork viewer">
+<button class="x" aria-label="Close">&times;</button>
+<button class="prev" aria-label="Previous">&#8249;</button>
+<img alt="">
+<button class="next" aria-label="Next">&#8250;</button>
+</div>
+<script>
+const art=[
+["02",1099,1500,"Profile portrait in blue and violet with curling pink hair on a red ground"],
+["03",1120,1500,"Red-branched tree and green pine against a pink and turquoise sky"],
+["01",1166,1500,"Portrait of a woman with yellow and lavender hair against deep red"],
+["05",1193,1500,"Twisting trees beneath a swirling orange and blue sky"],
+["22",1192,1600,"Glass mosaic of a flower with a dark glass center on a white and violet ground"],
+["19",1270,1600,"Three tall pines against a turquoise sky above an orange hillside"],
+["10",900,1125,"Autumn tree at sunset with a small blue dog in an orange field"],
+["06",1215,1500,"Two women in a room, one seated at a table with a glass of water"],
+["04",1191,1500,"Lone tree in a bold, striped landscape under a blue sky"],
+["16",1254,1612,"Jesus wearing a crown of thorns, smoking a cigar, on a red ground"],
+["07",872,1125,"Laughing woman in profile with green hair beneath an orange sun"],
+["09",931,1125,"Full moon over a violet marsh at night with branches overhead"],
+["24",1194,1600,"Woman with a blue hand at her lips, rust and gray patterned hair"],
+["20",1226,1600,"Red sun in a violet halo over a row of tangled trees"],
+["12",1174,1500,"Blue portrait of a man with glasses and a red mustache on yellow"],
+["14",1116,1125,"Pink flowers bursting from a blue glass vase on an orange table"],
+["17",1296,1612,"Bearded man with green curls and a striped shirt, chin in hand"],
+["13",1500,1066,"Windswept purple tree over orange hills beneath a pale sun"],
+["23",1204,1600,"Colorful glass mosaic with swirling amber and burgundy leaf shapes"],
+["21",1177,1600,"Abstract of black-ringed circles in orange, pink and turquoise swirls"],
+["11",1124,1500,"Lavender figure with arms crossed against orange and pink waves"],
+["18",1596,1610,"Red horned figure leaning on his arm with a cigarette"],
+["25",1200,1600,"Three bare trees on a blue hill beneath dripping red blossoms"],
+["08",924,2000,"Close-up of thick, textured brushwork in turquoise, green and cream"],
+["15",1500,693,"Tall grasses in green, orange and pink beneath a white sun"]
+];
+const g=document.getElementById('g');
+art.forEach(([f,w,h,alt],i)=>{const b=document.createElement('button');b.setAttribute('aria-label','View: '+alt);b.innerHTML='<img src="images/'+f+'.jpg" width="'+w+'" height="'+h+'" alt="'+alt+'" loading="'+(i<6?'eager':'lazy')+'" decoding="async">';b.onclick=()=>show(i);g.appendChild(b)});
+const lb=document.getElementById('lb'),li=lb.querySelector('img');let cur=0;
+function show(i){cur=(i+art.length)%art.length;li.src='images/'+art[cur][0]+'.jpg';li.alt=art[cur][3];lb.classList.add('open');document.body.style.overflow='hidden'}
+function hide(){lb.classList.remove('open');document.body.style.overflow=''}
+lb.querySelector('.x').onclick=hide;lb.querySelector('.prev').onclick=e=>{e.stopPropagation();show(cur-1)};lb.querySelector('.next').onclick=e=>{e.stopPropagation();show(cur+1)};
+lb.onclick=e=>{if(e.target===lb)hide()};
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')hide();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
